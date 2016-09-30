@@ -2,6 +2,20 @@
 @import 'ionicBuild/meteoric_ionicons-sass/ionicons';
 
 /* global stylings */
+.appColorBackground { background-color: #ee6e73; }
+.appColorBackgroundImp { background-color: #ee6e73 !important; }
+.flexCenter { display: flex; justify-content: center; align-items: center; }
+.fontWeight3 { font-weight: 300; }
+.fullWidth { width: 100%; }
+.margin0 { margin: 0px; }
+.padding5px { padding: 5px; }
 
-
+/* welcome page */
+.todoyLogo
+{
+	height: 100px; width: 100px; border-radius: 50%; margin: 0 auto; font-size: 70px;
+	text-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+	box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+}
+.welcomeNav { position: absolute; bottom: 0; }
 
