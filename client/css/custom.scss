@@ -4,11 +4,18 @@
 /* global stylings */
 .appColorBackground { background-color: #ee6e73; }
 .appColorBackgroundImp { background-color: #ee6e73 !important; }
+.disabled { background-color: #ebebeb; }
 .flexCenter { display: flex; justify-content: center; align-items: center; }
 .fontWeight3 { font-weight: 300; }
 .fullWidth { width: 100%; }
 .margin0 { margin: 0px; }
+.marginHorizontal3px { margin-left: 3px; margin-right: 3px; }
+.marginTop5px { margin-top: 5px; }
+.opacity0 { opacity: 0; }
 .padding5px { padding: 5px; }
+
+/* global animations */
+.fadeIn075s { opacity: 1; transition: .75s; }
 
 /* welcome page */
 .todoyLogo
@@ -19,3 +26,9 @@
 }
 .welcomeNav { position: absolute; bottom: 0; }
 
+
+/* introduction page */
+.introIcon 
+{ 
+	height: 50px; width: 50px; border-radius: 50%; transition: .85s;
+}

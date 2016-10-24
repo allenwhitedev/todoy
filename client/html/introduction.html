@@ -1,0 +1,33 @@
+<template name='introduction'>
+
+<br>
+<header class='introProgress'>
+	<ul class='introIconList flexCenter'>
+		<li class="introIcon flexCenter marginHorizontal3px red" id='addTaskIntroIcon'> 
+			<i class="ion-plus small white-text"></i> 
+		</li>
+		<li class="introIcon flexCenter marginHorizontal3px grey lighten-3" id='reorderIntroIcon'> 
+			<i class="ion-arrow-move small white-text"></i> 
+		</li>
+		<li class="introIcon flexCenter marginHorizontal3px grey lighten-3" id='addDatetimeIntroIcon'> 
+			<i class="ion-android-calendar small white-text"></i> 
+		</li>
+		<li class="introIcon flexCenter marginHorizontal3px grey lighten-3" id='completeDismissIntroIcon'> 
+			<i class="ion-android-done small white-text"></i> 
+		</li>
+	</ul>
+</header>
+
+<br>
+
+<main class="introInstruction">
+	<h5 class="center-align grey-text text-darken-1 margin0 temporaryOne">{{stepTitle}}</h5>
+	<p class="center-align grey-text text-lighten-1 marginTop5px padding5px">{{stepDescription}} <br> {{stepDescriptionExtra}}</p>
+</main>
+
+
+<section class="flexCenter">
+	<button class='introButton'>Next Step</button>
+</section>
+
+</template>
