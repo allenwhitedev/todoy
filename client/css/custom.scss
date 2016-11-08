@@ -32,3 +32,12 @@
 { 
 	height: 50px; width: 50px; border-radius: 50%; transition: .85s;
 }
+
+
+/* list */
+.listItem 
+{
+	min-height: 40px; display: flex; align-items: center; padding: 10px; 
+	border-bottom: 1px solid #ebebeb;
+}
+.dot {background: #ee6e73; border-radius: 50%; height: 5px; width: 5px; margin: 10px;}

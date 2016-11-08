@@ -1,8 +1,58 @@
 import { Template } from 'meteor/templating'
 import { ReactiveDict } from 'meteor/reactive-dict'
 
+// introduction helpers
 Template.introduction.helpers
 ({
+	'addingTime'() 
+	{
+		let currStep = Template.instance().currStep.get()
+		if ( currStep == "addDatetime" )
+		{
+			console.log("adding time")
+			return true
+		}
+		else
+			return false
+	},
+	'getFABAction'()
+	{
+		let currStep = Template.instance().currStep.get()
+		if ( currStep == "addTask" )
+			return "ion-plus"
+		if ( currStep == "reorder" )
+			return "ion-arrow-move"
+		if ( currStep == "addDatetime" )
+			return "ion-android-calendar"
+		if ( currStep == "Complete/Dismiss" )
+			return "ion-android-done"
+	},
+	'getFABColor'()
+	{
+		let currStep = Template.instance().currStep.get()
+		if ( currStep == "addTask" )
+			return "red"
+		if ( currStep == "reorder" )
+			return "yellow"
+		if ( currStep == "addDatetime" )
+			return "blue"
+		if ( currStep == "Complete/Dismiss" )
+			return "green"
+	},	
+	'placeholderInfo'()
+	{
+		let currStep = Template.instance().currStep.get()
+		if ( currStep == "Complete/Dismiss" )
+			return "Swipe To Dismiss"
+		else if ( currStep == "reorder")
+			return 'Reorder'
+	},
+	'placeholderForm'()
+	{
+		let currStep = Template.instance().currStep.get() 
+		if ( currStep == "addTask" )
+				return "Add Task"
+	},
 	'stepTitle'() 
 	{
 		let currStep = Template.instance().currStep.get()

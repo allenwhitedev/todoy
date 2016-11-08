@@ -1,0 +1,105 @@
+<template name='introduction'>
+
+<!-- steps -->
+<br>
+<header class='introProgress'>
+	<ul class='introIconList flexCenter'>
+		<li class="introIcon flexCenter marginHorizontal3px red" id='addTaskIntroIcon'> 
+			<i class="ion-plus small white-text"></i> 
+		</li>
+		<li class="introIcon flexCenter marginHorizontal3px grey lighten-3" id='reorderIntroIcon'> 
+			<i class="ion-arrow-move small white-text"></i> 
+		</li>
+		<li class="introIcon flexCenter marginHorizontal3px grey lighten-3" id='addDatetimeIntroIcon'> 
+			<i class="ion-android-calendar small white-text"></i> 
+		</li>
+		<li class="introIcon flexCenter marginHorizontal3px grey lighten-3" id='completeDismissIntroIcon'> 
+			<i class="ion-android-done small white-text"></i> 
+		</li>
+	</ul>
+</header>
+
+<br>
+
+<!-- intro instructions -->
+<main class="introInstruction">
+	<h5 class="center-align grey-text text-darken-1 margin0 temporaryOne">{{stepTitle}}</h5>
+	<p class="center-align grey-text text-lighten-1 marginTop5px padding5px">{{stepDescription}} <br> {{stepDescriptionExtra}}</p>
+</main>
+
+<!-- tasks collection -->
+<ul class="collection sortable selector dismissableCollection">
+    <li class="collection-item dismissable listItem">
+      <section class="dot"></section>
+      <div id='{{_id}}'>Add a task</div>
+    </li>
+    <li class="collection-item dismissable listItem">
+      <section class="dot"></section>
+      <div id='{{_id}}'>Reorder your list</div>
+    </li>
+    <li class="collection-item dismissable listItem">
+      <section class="dot"></section>
+      <div id='{{_id}}'>Change the date of a task</div>
+    </li>
+    <li class="collection-item dismissable listItem">
+      <section class="dot"></section>
+      <div id='{{_id}}'>Complete/Dismiss a task</div>
+    </li>
+</ul>
+
+
+<section class="flexCenter">
+	<button class='introButton'>Next Step</button>
+</section>
+
+
+
+<!-- introduction fab ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<footer class='fabFooter'>
+
+<!-- button -->
+<div class="fixed-action-btn" style="bottom: 24px; right: 24px;">
+  
+  <a class="btn-floating btn-large {{getFABColor}}" >
+    <i class="large {{getFABAction}}" id='{{getFABAction}}'></i>
+  </a>
+  
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ text line ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- date & time pickers -->
+{{#if addingTime}} 
+	<div class='row' style='position: absolute; bottom: 0px; padding-left: 20px; width: 70%;'>
+	  <div class="datepickerForm">
+	   <input type='date' id='fabInputBar' class='datepicker padLeft absoluteToHide' >
+	   <label class='' for='fabInputBar'>Add/Edit Date</label>
+	  </div>
+	</div>
+	{{> datepickerInit}}
+
+<!--  add task -->
+{{else}} {{#if placeholderForm}}
+	<div class='row' style='position: fixed; bottom: 0px; padding-left: 20px; width: 70%;'>
+	  <div class="input-field">
+	    <form class='fabForm'>
+	      <input value='' id="fabInputBar" type='text' name='fabText' class='validate padLeft'>
+	      <label class='' for='fabInputBar'>{{placeholderForm}}</label>
+	    </form>
+	  </div>
+	</div>
+
+<!-- reorder & complete/dismiss -->
+{{else}} {{#if placeholderInfo}} <!-- {{> dismissableInit}} -->
+	<div class='row' style='position: fixed; bottom: 0px; padding-left: 20px; width: 70%;'>
+	   <label class='' for='fabInputBar'>{{placeholderInfo}}</label>
+	</div>
+	    {{/if}}
+	  
+	  {{/if}}
+{{/if}}
+
+</footer>
+
+</template>

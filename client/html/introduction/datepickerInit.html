@@ -1,0 +1,27 @@
+<template name='datepickerInit'>
+<!-- datepicker materialize/jquery initialization, 
+	also handles datepicker submit event (for materialize) -->
+<script type="text/javascript">
+$('.datepicker').pickadate
+({
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 5, // Creates a dropdown of 15 years to control year
+  close: 'add',
+  onClose: function()
+  {
+    var dateInput = $('#fabInputBar').val()
+    if (dateInput.length > 0)
+    {
+      var datetime = new Date( $('#fabInputBar').val() )  
+      var month = datetime.getMonth(); 
+      var day = datetime.getDate(); 
+      var year = datetime.getFullYear()
+      Tasks.update({_id: Session.get('selectedTask')}, {$set: 
+        {month: month, day: day, year: year}, })
+      $('#fabInputBar').val(''); 
+    }
+    $('.selectedTask').removeClass('selectedTask'); Session.delete('selectedTask')
+  }
+})
+</script> 
+</template>
